@@ -6,8 +6,9 @@ from datetime import datetime
 def pripojeni_test_db():
     return mysql.connector.connect(
         host="localhost",
+        port=3306,
         user="root",
-        password="tvoje_heslo",
+        password="martinaandraskova",
         database="task_manager"
     )
 
