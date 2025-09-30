@@ -1,5 +1,5 @@
 import pytest
-from Modul2_oprava.tasks import pridat_ukol, vypsat_ukoly, zmenit_stav_ukolu, odstranit_ukol
+from tasks import pridat_ukol, vypsat_ukoly, zmenit_stav_ukolu, odstranit_ukol
 
 # Přidání úkolu
 def test_pridat_ukol_pozitivni():

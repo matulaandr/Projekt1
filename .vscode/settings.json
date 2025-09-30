@@ -1,0 +1,7 @@
+{
+    "python.testing.pytestArgs": [
+        "Modul2_oprava"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}

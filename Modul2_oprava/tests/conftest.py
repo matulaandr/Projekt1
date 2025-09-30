@@ -12,7 +12,7 @@ def configure_test_db_env():
     os.environ["TASK_DB_NAME"] = TEST_DB_NAME
     os.environ["TASK_DB_HOST"] = os.getenv("TASK_DB_HOST", "localhost")
     os.environ["TASK_DB_USER"] = os.getenv("TASK_DB_USER", "root")
-    os.environ["TASK_DB_PASS"] = os.getenv("TASK_DB_PASS", "tvoje_heslo")
+    os.environ["TASK_DB_PASS"] = os.getenv("TASK_DB_PASS", "martinaandraskova")
 
 @pytest.fixture(scope="session")
 def test_db_connection(configure_test_db_env):
