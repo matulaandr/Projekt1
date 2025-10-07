@@ -17,20 +17,21 @@ def accepted_page(page: Page):
 
     return page
 
-
 # Test: Objednávka kurzu Tester s Pythonem
 def test_order_python_tester_course(accepted_page: Page):
     page = accepted_page
 
     # otevře stránku s přehledem IT kurzů
     page.get_by_role("link", name="Přehled IT kurzů").click()
-    page.wait_for_load_state("networkidle")  # počká, než se stránka načte
+    # počká, až se objeví odkaz na kurz "Tester s Pythonem"
+    page.get_by_role("link", name="Tester s Pythonem", exact=True).wait_for(state="visible", timeout=10000)
 
     # klikne na kurz "Tester s Pythonem"
     page.get_by_role("link", name="Tester s Pythonem", exact=True).click()
  
     # zobrazí termíny kurzu
     page.get_by_role("link", name="Zobrazit termíny kurzu").click()
+    page.locator("text=Detail termínu").first.wait_for(state="visible", timeout=10000)
 
     # klikne na první dostupný termín kurzu
     page.locator("text=Detail termínu").first.click()
@@ -47,8 +48,6 @@ def test_order_python_tester_course(accepted_page: Page):
 
     # ověří, že se zobrazily fakturační údaje
     expect(page.locator("h3:has-text('Fakturační údaje')")).to_be_visible(timeout=10000)
-
-
 
 # Test: Přihlášení do výukového portálu
 def test_login_to_learning_portal(accepted_page: Page):
