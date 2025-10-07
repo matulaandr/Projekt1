@@ -4,7 +4,7 @@ from playwright.sync_api import Page, expect
 BASE_URL = "https://www.engeto.cz"
 
 
-# 🧩 Fixture – otevře web a akceptuje cookies
+#  Fixture – otevře web a akceptuje cookies
 @pytest.fixture
 def accepted_page(page: Page):
     """Otevře hlavní stránku a potvrdí cookies banner, pokud je viditelný."""
